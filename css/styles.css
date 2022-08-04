@@ -1,0 +1,52 @@
+/*----Font Styles----*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/*----Body inside grid-container----*/
+/*---- grid-container set-up----*/
+.header {
+    grid-area: header;
+}
+.nav {
+    grid-area: nav;
+}
+.main {
+    grid-area: main;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main";
+}
+/*----Grid placement for elements----*/
+
+/*----Media query for desktop
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas:
+        "header header"
+        "nav main";
+    }
+   
+}
+
+
+
+@media (min-width: 768px) {
+    .main {
+        grid-template-columns: 50%  ;
+    }
+}
+.nav{
+    background-color: blueviolet;
+}
+
