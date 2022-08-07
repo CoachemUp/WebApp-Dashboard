@@ -8,7 +8,7 @@ h1 {
 }
 
 h3 {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 }
 
 * {
@@ -29,6 +29,8 @@ h3 {
   grid-template-areas:
     "header"
     "nav"
+    "dashboard"
+    "alert"
     "main";
 }
 
@@ -45,12 +47,30 @@ nav {
   grid-area: nav;
 }
 
+dashboard {
+  grid-area: dashboard;
+}
+
+alert {
+  grid-area: alert;
+}
+
 /*----HEADER-GRID SETUP----*/
 .header-grid {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   background-color: #7477bf;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  gap: 10px;
+}
+.title {
+  margin-right: auto;
+}
+.vl {
+  border-left: 1px solid white;
+  opacity: 0.5;
+  height: 40px;
 }
 /*----NAVBAR-GRID SETUP----*/
 .navbar-grid {
@@ -59,37 +79,145 @@ nav {
   align-items: center;
   justify-content: center;
 }
+/*----MAIN-GRID SETUP----*/
+main {
+  display: grid;
+}
 /*----------------------------
     MOBIL IMAGES STYLES
 ----------------------------*/
 /*----BELL SVG IN HEADER----*/
 .bell {
-  width: 50px;
+  width: 20px;
   height: auto;
-  border-right: 2px solid rgb(255, 255, 255);
 }
 /*----PROFILE IMAGE IN HEADER----*/
 .pic img {
   border-radius: 100%;
-  width: 50px;
+  width: 40px;
   height: auto;
 }
+/*----NAVIGATION SIDEBAR IMAGES----*/
 nav img {
   width: 60px;
   padding: 10px 15px;
 }
+/*----SOCIAL SVG IMAGES----*/
+.social svg {
+  width: 60px;
+}
+/*-------------------------------------
+    DASHBOARD TAB
+-------------------------------------*/
+.dashboard {
+  display: flex;
+  margin-left: 15px;
+  height: 40px;
+}
+.headline {
+  align-self: center;
+  font-size: 0.8rem;
+  margin-right: 20px;
+}
+.tab {
+  margin-right: auto;
+  width: 100%;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  opacity: 0.2;
+  background-color: rgb(243, 242, 242);
+}
+/*-------------------------------------
+    ALERT BANNER
+-------------------------------------*/
+.alert {
+  
+}
 
-/*----NAVIGATION SIDEBAR IMAGES----*/
+.alert-banner {
+  color: white;
+  display: flex;
+  background-color: #7477bf;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+  font-size: 14px;
+}
+.alert-banner-close {
+  margin-left: auto;
+}
+/*-------------------------------------
+    TRAFFIC HEADER
+-------------------------------------*/
+.traffic-header {
+  margin: 20px;
+}
+ul {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
 
-/*----Media query for desktop----*/
+li {
+  text-decoration: bold;
+  list-style: none;
+  display: inline;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.traffic-nav-link {
+  background-color: darkseagreen;
+  border-radius: 20px;
+  text-align: center;
+}
+/*-------------------------------------
+    MEDIA QUERIES
+-------------------------------------*/
+/*----Media query for desktop--------*/
 /*----Grid placement for elements----*/
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 55px 1fr;
     grid-template-areas:
       "header header"
+      "nav dashboard"
+      "nav alert"
       "nav main";
   }
+  .navbar-grid {
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+  }
+  main {
+    grid-template-columns: 50%;
+  }
 
+  .dashboard,
+  .social {
+    grid-column: 1 / span 2;
+  }
+
+  .alert {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  .traffic {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+
+  .new-members,
+  .daily-traffic,
+  .message {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile-users,
+  .activity,
+  .recent-activity,
+  .settings {
+    grid-column: 2 / span 1;
+  }
 }
-
