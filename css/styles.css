@@ -17,6 +17,9 @@ h3 {
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+main {
+  color: black;
+}
 /*------------------------------------
     MOBILE FIRST GRIDS
 ------------------------------------*/
