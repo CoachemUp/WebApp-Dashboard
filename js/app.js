@@ -19,11 +19,11 @@ const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 // ensure user and message fields are filled out
-send.addEventListener("click", () => {
+send.addEventListener('click', () => {
   if (user.value === "" && message.value === "") {
-    alert("Please fill out user and message fields before sending");
+    alert("Please fill out user  and message fields before sending");
   } else if (user.value === "") {
-    alert("Please fill out user field before sending");
+    alert("Please fill out user before sending");
   } else if (message.value === "") {
     alert("Please fill out message field before sending");
   } else {

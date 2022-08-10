@@ -27,7 +27,7 @@ let trafficData = {
 let trafficOptions = {
     backgroundColor: "rgba(112, 104, 201, .5)",
     fill: true,
-    aspectRatio: 2.5,
+    maintainAspectRatio: true,
     animation: {
         duration: 0,
     },
