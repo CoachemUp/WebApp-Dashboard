@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300");
+
 /*------------------------------------
     MOBILE FIRST BASE STYLES
 ------------------------------------*/
@@ -10,6 +11,7 @@ h1 {
 h3 {
   font-size: 0.8rem;
 }
+
 .name h3 {
   font-size: 0.5rem;
 }
@@ -20,9 +22,11 @@ h3 {
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+
 main {
   color: black;
 }
+
 /*------------------------------------
     MOBILE FIRST GRIDS
 ------------------------------------*/
@@ -92,6 +96,7 @@ alert {
   width: 40px;
   height: auto;
 }
+
 /*-------------------------------------
     NAVBAR SETUP
 -------------------------------------*/
@@ -102,11 +107,13 @@ alert {
   align-items: center;
   justify-content: center;
 }
+
 /*----NAVIGATION SIDEBAR IMAGES----*/
 nav img {
   width: 60px;
   padding: 10px 15px;
 }
+
 /*-------------------------------------
     DASHBOARD TAB
 -------------------------------------*/
@@ -115,11 +122,13 @@ nav img {
   margin: 0px 0px 20px 20px;
   height: 40px;
 }
+
 .headline {
   align-self: center;
   font-size: 0.8rem;
   margin-right: 20px;
 }
+
 .tab {
   margin-right: auto;
   width: 100%;
@@ -128,6 +137,7 @@ nav img {
   opacity: 0.5;
   background-color: rgb(221, 216, 216);
 }
+
 /*-------------------------------------
     ALERT BANNER
 -------------------------------------*/
@@ -140,6 +150,7 @@ nav img {
   padding: 10px;
   font-size: 10px;
 }
+
 .alert-banner-close {
   margin-left: auto;
 }
@@ -169,12 +180,14 @@ nav img {
   margin-right: 30px;
   margin-bottom: 20px;
 }
+
 .daily-traffic {
   position: relative;
   margin: auto;
   height: 25vh;
   width: 90vw;
 }
+
 /*-------------------------------------
     DAILY TRAFFIC SECTION
 -------------------------------------*/
@@ -184,14 +197,17 @@ nav img {
   height: 25vh;
   width: 85vw;
 }
+
 .bar-header {
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
 }
+
 .bar {
   border-bottom: solid 1px black;
 }
+
 /*-------------------------------------
     MOBILE USERS SECTION
 -------------------------------------*/
@@ -200,27 +216,91 @@ nav img {
   margin-left: 20px;
   margin-bottom: 20px;
 }
+
 .doughnut {
   position: relative;
   margin: auto;
   height: 25vh;
   width: 85vw;
 }
+
 .mobile {
   border-bottom: solid 1px black;
 }
+
 /*-------------------------------------
     SOCIAL STATS AREA
 -------------------------------------*/
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+}
+
+.social-header {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.social-image {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  gap: 20px;
+  background-color: rgb(245, 241, 241);
+  border: 1px solid black;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.social-text h3 {
+  color: #7175e1;
+  font-weight: bold;
+}
+
+.social-text p {
+  font-size: 32px;
+}
+
 .social svg {
   width: 60px;
 }
+
+/*-------------------------------------
+    NEW MEMBERS AREA
+-------------------------------------*/
+.member-header {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.profile-image {
+  width: 60px;
+  border-radius: 100%;
+}
+.members-container {
+  display: flex;
+  flex-direction: column;
+
+
+
+
+
+
+
+
+
+
 /*-------------------------------------
     MAIN SECTION 
 -------------------------------------*/
 main {
   display: grid;
 }
+
 /*-------------------------------------
     MEDIA QUERIES
 -------------------------------------*/
@@ -279,8 +359,9 @@ main {
     margin-left: 20px;
     margin-right: 20px;
   }
+
   .traffic-nav {
-   gap: 20px;
+    gap: 20px;
   }
 
   .daily-traffic {
@@ -289,7 +370,7 @@ main {
     height: 68vh;
     width: 90vw;
   }
- 
+
   .bar-graph {
     height: 25vh;
     width: 43vw;
@@ -298,9 +379,12 @@ main {
   .bar {
     border-right: solid 1px black;
   }
-  
+
   .doughnut {
     height: 40vh;
     width: 45vw;
   }
+
+
+
 }
