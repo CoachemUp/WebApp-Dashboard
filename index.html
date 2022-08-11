@@ -153,16 +153,16 @@
     <!-- new members widget -->
     <section class="new-members" id="new-members">
       <div class="member-header">
-      <h3>NEW MEMBERS</h3>
-    </div>
+        <h3>NEW MEMBERS</h3>
+      </div>
       <!--Member 1-->
       <div class="members-container">
         <img src="images/member-1.jpg" class="profile-image" alt="a" />
         <div class="members-text">
           <p>Victoria Chambers</p>
           <a href="#">victoria.chambers80@example.com</a>
+          <p>10/15/20</p>
         </div>
-        <p>10/15/20</p>
       </div>
       <!--Member 2-->
       <div class="members-container">
@@ -170,8 +170,8 @@
         <div class="members-text">
           <p>Dale Byrd</p>
           <a href="#">dale.byrd52@example.com</a>
+          <p>10/15/20</p>
         </div>
-        <p>10/15/20</p>
       </div>
       <!--Member 3-->
       <div class="members-container">
@@ -179,8 +179,8 @@
         <div class="members-text">
           <p>Dawn Wood</p>
           <a href="#">dawn.wood16@example.com</a>
+          <p>10/15/20</p>
         </div>
-        <p>10/15/20</p>
       </div>
       <!--Member 4-->
       <div class="members-container">
@@ -188,83 +188,108 @@
         <div class="members-text">
           <p>Dan Oliver</p>
           <a href="#">dan.oliver82@example.com</a>
+          <p>10/15/20</p>
         </div>
-        <p>10/15/20</p>
       </div>
     </section>
+
+
+
+
+
+
     <!-- recent activity widget -->
     <section class="recent-activity">
-      <h3>Recent Activity</h3>
+      <div class="member-header">
+        <h3>Recent Activity</h3>
+      </div>
       <!--Member 1-->
       <div class="members-container">
         <img src="images/member-1.jpg" class="profile-image" alt="" />
         <div class="members-text">
           <p>Victoria Chambers commented on <b>WebApp's SEO Tips</b></p>
+          <p>4 hours ago</p>
         </div>
-        <p>10/15/20</p>
       </div>
       <!--Member 2-->
       <div class="members-container">
         <img src="images/member-2.jpg" class="profile-image" alt="" />
         <div class="members-text">
           <p>Dale Byrd liked the post <b>Facebook's Changes for 2021</b></p>
+
+          <p>5 hours ago</p>
         </div>
-        <p>10/15/20</p>
       </div>
       <!--Member 3-->
       <div class="members-container">
         <img src="images/member-3.jpg" class="profile-image" alt="" />
         <div class="members-text">
           <p>Dawn Wood commented on <b>Facebook's Changes for 2021</b></p>
+
+          <p>5 hours ago</p>
         </div>
-        <p>10/15/20</p>
       </div>
       <!--Member 4-->
       <div class="members-container">
         <img src="images/member-4.jpg" class="profile-image" alt="" />
         <div class="members-text">
           <p>Dan Oliver posted <b>WebApp's SEO Tips</b></p>
+
+          <p>1 day ago</p>
         </div>
-        <p>10/15/20</p>
       </div>
     </section>
     <!-- messaging widget -->
     <section class="message">
-      <h3>Message User</h3>
-      <form class="widget-container">
+      <div class="message-header">
+        <h3>Message User</h3>
+      </div>
+      <form class="message-container">
         <input type="text" placeholder="Search for user" class="form-field" id="userField" />
         <textarea placeholder="Message for user" class="form-area" id="messageField">
           </textarea>
-        <button class="button-primary" id="send">Send</button>
+        <button class="message-button" id="send">Send</button>
       </form>
     </section>
+
+
+
+
+
+
+
+
     <!-- local settings widget -->
     <section class="settings" id="settings">
-      <h3>Settings</h3>
+      <div class="settings-header">
+        <h3>Settings</h3>
+      </div>
       <!-- Send Email Notification Toggle-->
-      <div class="">
-        <label class="switch-light switch-ios" style="width: 250px" onclick="">
+      <div class="email">
+        <label class="switch" onclick="">
           <input type="checkbox" />
           <strong>Send Email Notifications</strong>
+          <span class="slider round">
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+        </label>
+      <!-- Set Profile to Public Toggle
+        <label class="switch-light switch-ios" onclick="">
+          <input type="checkbox" />
+          <strong>Set Profile to Public</strong>
           <span>
             <span>Off</span>
             <span>On</span>
             <a></a>
           </span>
         </label>
-      </div>
-      <!-- Set Profile to Public Toggle-->
-      <div class="">
-        <label class="switch-light switch-ios" style="width: 250px" onclick="">
-          <input type="checkbox" />
-          <strong>Send Email Notifications</strong>
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
-        </label>
-      </div>
+      </div>-->
+    </section>
+
+
+
       <!-- TimeZone options-->
       <select class="form-field" id="timezone">
         <option disabled selected>Select a Timezone</option>

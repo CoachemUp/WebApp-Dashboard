@@ -271,25 +271,119 @@ nav img {
 /*-------------------------------------
     NEW MEMBERS AREA
 -------------------------------------*/
+
 .member-header {
-  margin-top: 20px;
-  margin-left: 20px;
-  width: 100%;
+  margin: 20px;
 }
 
-.profile-image {
-  width: 60px;
-  border-radius: 100%;
-}
 .members-container {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  
+}
+.members-container:not(:last-child){
+  border-bottom: 1px solid black;
+}
 
+.members-text {
+  text-align: center;
+  font-size: 13px;
+}
 
+.profile-image {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  border-radius: 50%;
+  padding-bottom: 10px;
+}
 
+a:link {
+  text-decoration: none;
+}
+/*-------------------------------------
+    RECENT ACTIVITY AREA
+-------------------------------------*/
+.recent-activity {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 
+/*-------------------------------------
+    MESSAGE AREA
+-------------------------------------*/
+.message {
+  border-bottom: 1px solid black;
+}
+.message-header {
+  margin: 20px;
+}
+.message-container {
+ margin: 0px 20px;
+}
 
+input[type=text]{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color:rgb(245, 241, 241);
+}
+input::placeholder {
+  opacity: .5;
+}
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 150px;
+  resize: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color:rgb(232, 231, 231);
+}
+.message-button {
+  width: 100%;
+  background-color: #7477bf;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
 
+/*-------------------------------------
+    SETTING SECTION 
+-------------------------------------*/
+.settings {
+  display: flex;
+  flex-direction: column;
+  
+  margin: 20px;
+}
+.email {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
 
 
@@ -384,7 +478,7 @@ main {
     height: 40vh;
     width: 45vw;
   }
-
-
-
+  .new-members {
+    width: 30;
+  }
 }
