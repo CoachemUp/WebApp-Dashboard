@@ -97,10 +97,11 @@ nav {
   background-color: #7477bf;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding-left: 10px;
   padding-right: 10px;
-  gap: 5px;
+  padding-left: 10px;
+  gap: 10px;
 }
 
 .title {
@@ -119,9 +120,10 @@ nav {
 }
 
 .pic img {
-  border-radius: 100%;
+  border-radius: 50%;
   width: 40px;
   height: auto;
+  padding-top: 10px;
 }
 
 /*-------------------------------------
@@ -140,7 +142,6 @@ nav img {
   width: 60px;
   padding: 10px 15px;
 }
-
 /*-------------------------------------
     DASHBOARD TAB
 -------------------------------------*/
@@ -164,7 +165,6 @@ nav img {
   opacity: 0.5;
   background-color: rgb(221, 216, 216);
 }
-
 /*-------------------------------------
     ALERT BANNER
 -------------------------------------*/
@@ -181,12 +181,10 @@ nav img {
 .alert-banner-close {
   margin-left: auto;
 }
-
 /*-------------------------------------
     TRAFFIC SECTION
 -------------------------------------*/
 .traffic {
-  border-bottom: solid 1px #d3d3d3;
 }
 
 .traffic-header {
@@ -214,16 +212,20 @@ nav img {
   height: 25vh;
   width: 90vw;
 }
-
 /*-------------------------------------
     DAILY TRAFFIC SECTION
 -------------------------------------*/
+.chart {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
 
 .bar-graph {
   position: relative;
   margin: auto;
-  height: 25vh;
+  height: 30vh;
   width: 85vw;
+  margin-bottom: 20px;
 }
 
 .bar-header {
@@ -235,7 +237,6 @@ nav img {
 .bar {
   border-bottom: solid 1px #d3d3d3;
 }
-
 /*-------------------------------------
     MOBILE USERS SECTION
 -------------------------------------*/
@@ -248,37 +249,36 @@ nav img {
 .doughnut {
   position: relative;
   margin: auto;
-  height: 25vh;
+  height: 35vh;
   width: 85vw;
+  margin-bottom: 20px;
 }
 
 .mobile {
   border-bottom: solid 1px #d3d3d3;
 }
-
 /*-------------------------------------
     SOCIAL STATS AREA
 -------------------------------------*/
 .social {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   border-bottom: 1px solid #d3d3d3;
+ 
 }
 
 .social-header {
-  margin-top: 20px;
-  margin-left: 20px;
   width: 100%;
+  margin: 20px 20px 0px 20px;
 }
 
 .social-image {
   display: flex;
   align-items: center;
-  margin: 20px;
-  padding: 10px;
+  margin: 10px 20px 20px;
+
   gap: 20px;
   background-color: #f5f4f4;
-  border: 1px solid #d3d3d3;
+  border: 1px solid #a9a9a9;
   border-radius: 5px;
   flex-grow: 1;
 }
@@ -295,6 +295,7 @@ nav img {
 .social svg {
   width: 45px;
 }
+
 .svgs {
   display: flex;
   align-items: center;
@@ -303,13 +304,12 @@ nav img {
   width: 75px;
   border-radius: 50%;
   background-color: #7175e1;
+ margin: 10px;
 }
-
 /*-------------------------------------
     NEW MEMBERS AREA
 -------------------------------------*/
-
-.new-members {
+.member-header {
   margin: 20px;
 }
 
@@ -318,7 +318,9 @@ nav img {
   flex-direction: column;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin: 0px 20px 0px;
 }
+
 .members-container:not(:last-child) {
   border-bottom: 1px solid #d3d3d3;
 }
@@ -348,14 +350,17 @@ a:link {
 -------------------------------------*/
 .recent-activity {
   border-top: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;
 }
 
+.gth {
+  display: none;
+}
 /*-------------------------------------
     MESSAGE AREA
 -------------------------------------*/
 .message {
   border-bottom: 1px solid #d3d3d3;
+  border-top: 1px solid #d3d3d3;
 }
 .message-header {
   margin: 20px;
@@ -390,27 +395,37 @@ textarea {
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: 700;
   padding: 10px;
   margin-bottom: 15px;
 }
 
 /*-------------------------------------
-    SETTING SECTION 
+    SETTINGS SECTION 
 -------------------------------------*/
 .settings {
+  display: flex;
+  flex-direction: column;
+}
+.settings-header {
   margin: 20px;
 }
-
+.timeZone {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 20px 20px 0px 20px;
+}
 .email {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+
   font-size: 0.8rem;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 15px;
+  padding-top: 5px;
+  margin: 0px 20px;
 }
 
 /*----TOGGLE SWITCH----*/
@@ -470,12 +485,6 @@ textarea {
 /*-------------------------------------
     TIMEZONE SECTION 
 -------------------------------------*/
-.timeZone {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .form-field {
   margin-right: auto;
@@ -512,6 +521,7 @@ select {
   border-radius: 5px;
   padding: 10px;
   font-weight: 700;
+  font-size: 0.8rem;
 }
 
 .button-disabled {
@@ -521,17 +531,13 @@ select {
   border: 1px solid lightgray;
   border-radius: 5px;
   font-weight: 700;
+  font-size: 0.8rem;
 }
-
-/*-------------------------------------
-    MAIN SECTION 
--------------------------------------*/
 
 /*-------------------------------------
     MEDIA QUERIES
 -------------------------------------*/
-/*----Media query for desktop--------*/
-/*----Grid placement for elements----*/
+/*----Media query for Tablet--------*/
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 55px 1fr;
@@ -559,6 +565,7 @@ select {
   .traffic {
     grid-column: 1 / span 2;
     grid-row: 3;
+    margin-bottom: 20px;
   }
   .chart {
     grid-column: 1 / span 2;
@@ -566,7 +573,6 @@ select {
     display: flex;
     justify-content: space-between;
     padding: 0px 20px;
-    border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
   }
   .bar-header {
@@ -577,6 +583,108 @@ select {
   .social {
     grid-column: 1 / span 2;
     grid-row: 5;
+  }
+  .social {
+    grid-template-columns: repeat(3, 1fr);
+   
+  }
+  .social-image {
+    gap: 20px;
+  }
+  .social-header {
+    grid-column: 1 / span 3;
+  }
+
+  .new-members {
+    grid-column: 1 / span 2;
+    grid-row: 6;
+  }
+  .recent-activity {
+    grid-column: 1 / span 2;
+    grid-row: 7;
+  }
+  .message {
+    grid-column: 1 / span 2;
+    grid-row: 8;
+  }
+  .settings {
+    grid-column: 1 / span 2;
+    grid-row: 9;
+  }
+  .daily-traffic {
+    position: relative;
+    margin: auto;
+    height: 30vh;
+    width: 90vw;
+  }
+  .bar-graph {
+    height: 20vh;
+    width: 45vw;
+  }
+  .doughnut {
+    height: 20vh;
+    width: 45vw;
+  }
+  .bar,
+  .mobile {
+    border: none;
+  }
+  .v2 {
+    border-right: 1px solid #a9a9a9;
+    padding-left: 20px;
+    height: 100%;
+  }
+}
+
+/*----Media query for desktop--------*/
+/*----Grid placement for elements----*/
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main";
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 50%;
+  }
+  .navbar-grid {
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+  }
+  .dashboard {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+  .alert {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+  .traffic {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    margin-bottom: 20px;
+  }
+  .chart {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    border-bottom: 1px solid lightgray;
+  }
+  .bar-header {
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+  .social {
+    grid-column: 1 / span 2;
+    grid-row: 5;
+  }
+  .social-image {
   }
   .new-members {
     grid-column: 1 / span 1;
@@ -594,7 +702,6 @@ select {
     grid-column: 2 / span 1;
     grid-row: 7;
   }
-
   .traffic-header {
     display: flex;
     justify-content: space-between;
@@ -602,15 +709,13 @@ select {
     margin-left: 20px;
     margin-right: 20px;
   }
-
   .traffic-nav {
     gap: 20px;
   }
-
   .daily-traffic {
     position: relative;
     margin: auto;
-    height: 68vh;
+    height: 50vh;
     width: 90vw;
   }
   .bar,
@@ -630,32 +735,53 @@ select {
     height: 40vh;
     width: 45vw;
   }
- 
-  .member-header {
-    border-right: 1px solid #a9a9a9;
-  }
   .members-container {
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    border-right: 1px solid #a9a9a9;
   }
   .members-text {
     display: flex;
     flex-direction: column;
     text-align: left;
   }
-  .members-text p {
-    font-weight: bold;
+  .new-members p {
+    font-weight: 600;
   }
   .date {
     margin-left: auto;
     margin-right: 10px;
-    font-weight: bold;
-    
+    font-weight: 600;
+  }
+  .gth {
+    display: inline;
+    margin-left: auto;
   }
   .profile-image {
     margin-left: 0;
     margin-right: 0;
+  }
+  .recent-activity p {
+    font-weight: 500;
+  }
+  .recent-activity {
+    border-top: none;
+    border-bottom: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+  }
+  .new-members {
+    border-bottom: 1px solid #d3d3d3;
+  }
+  .message {
+    border: none;
+  }
+  .settings {
+    border-left: 1px solid #d3d3d3;
+  }
+  .toggle-1 {
+    margin-right: 130px;
+  }
+  .timeZone {
+    padding-top: 29px;
   }
 }
