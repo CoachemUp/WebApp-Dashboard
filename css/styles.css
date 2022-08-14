@@ -115,8 +115,46 @@ nav {
 }
 
 .bell {
-  width: 20px;
+  width: 30px;
   height: auto;
+}
+.dot {
+  display: flex;
+  margin-left: auto;
+  background-color: #88d688;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  opacity: 1;
+}
+/*----BELL ANIMATION----*/
+#bell-icon {
+  transform-origin: 50% 50%;
+}
+
+#bell:hover #bell-icon {
+  animation-name: ring;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
 }
 
 .pic img {
@@ -171,21 +209,23 @@ nav img {
 .alert-banner {
   color: white;
   display: flex;
+  align-items: center;
   background-color: #7477bf;
   border-radius: 5px;
   margin: 0px 20px 20px 20px;
   padding: 10px;
-  font-size: 10px;
+  font-size: 0.6rem;
 }
 
 .alert-banner-close {
+  cursor: pointer;
+  font-size: 0.6rem;
+  font-weight: bold;
   margin-left: auto;
 }
 /*-------------------------------------
     TRAFFIC SECTION
 -------------------------------------*/
-.traffic {
-}
 
 .traffic-header {
   margin-left: 20px;
@@ -262,25 +302,16 @@ nav img {
 -------------------------------------*/
 .social {
   display: grid;
-  border-bottom: 1px solid #d3d3d3;
- 
-}
-
-.social-header {
-  width: 100%;
-  margin: 20px 20px 0px 20px;
+  margin: 20px;
 }
 
 .social-image {
   display: flex;
   align-items: center;
-  margin: 10px 20px 20px;
-
-  gap: 20px;
+  margin-top: 20px;
   background-color: #f5f4f4;
   border: 1px solid #a9a9a9;
   border-radius: 5px;
-  flex-grow: 1;
 }
 
 .social-text h3 {
@@ -304,11 +335,14 @@ nav img {
   width: 75px;
   border-radius: 50%;
   background-color: #7175e1;
- margin: 10px;
+  margin: 10px;
 }
 /*-------------------------------------
     NEW MEMBERS AREA
 -------------------------------------*/
+.new-members {
+  border-top: 1px solid #d3d3d3;
+}
 .member-header {
   margin: 20px;
 }
@@ -384,10 +418,14 @@ textarea {
   width: 100%;
   margin-bottom: 10px;
   height: 150px;
-  resize: none;
+
   border: 1px solid #d3d3d3;
   border-radius: 5px;
   background-color: #f2f2f2;
+}
+textarea::placeholder {
+  opacity: 0.5;
+  padding-left: 10px;
 }
 .message-button {
   width: 100%;
@@ -421,7 +459,6 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   font-size: 0.8rem;
   padding-bottom: 15px;
   padding-top: 5px;
@@ -533,6 +570,9 @@ select {
   font-weight: 700;
   font-size: 0.8rem;
 }
+/*-------------------------------------
+    POPUP WINDOW
+-------------------------------------*/
 
 /*-------------------------------------
     MEDIA QUERIES
@@ -567,6 +607,16 @@ select {
     grid-row: 3;
     margin-bottom: 20px;
   }
+  .traffic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .traffic-nav {
+    gap: 20px;
+  }
   .chart {
     grid-column: 1 / span 2;
     grid-row: 4;
@@ -585,14 +635,14 @@ select {
     grid-row: 5;
   }
   .social {
-    grid-template-columns: repeat(3, 1fr);
-   
+    gap: 10px;
   }
   .social-image {
-    gap: 20px;
+    margin-top: 0px;
   }
   .social-header {
     grid-column: 1 / span 3;
+    width: 100%;
   }
 
   .new-members {
@@ -633,6 +683,55 @@ select {
     border-right: 1px solid #a9a9a9;
     padding-left: 20px;
     height: 100%;
+    opacity: 0.5;
+  }
+  .members-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .members-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .new-members p {
+    font-weight: 600;
+  }
+  .date {
+    margin-left: auto;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+  .gth {
+    display: inline;
+    margin-left: auto;
+  }
+  .profile-image {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .recent-activity p {
+    font-weight: 500;
+  }
+  .recent-activity {
+    border-bottom: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+  }
+  .new-members {
+    border-bottom: 1px solid #d3d3d3;
+  }
+  .settings {
+    justify-content: space-between;
+  }
+  .toggle-1 {
+    margin-right: 360px;
+  }
+  .alert-banner {
+    font-size: 0.8rem;
+  }
+  .alert-banner-close {
+    font-size: 0.8rem;
   }
 }
 
@@ -684,24 +783,27 @@ select {
     grid-column: 1 / span 2;
     grid-row: 5;
   }
-  .social-image {
-  }
+
   .new-members {
     grid-column: 1 / span 1;
     grid-row: 6;
   }
+
   .recent-activity {
     grid-column: 2 / span 1;
     grid-row: 6;
   }
+
   .message {
     grid-column: 1 / span 1;
     grid-row: 7;
   }
+
   .settings {
     grid-column: 2 / span 1;
     grid-row: 7;
   }
+
   .traffic-header {
     display: flex;
     justify-content: space-between;
@@ -709,79 +811,102 @@ select {
     margin-left: 20px;
     margin-right: 20px;
   }
+
   .traffic-nav {
     gap: 20px;
   }
+
   .daily-traffic {
     position: relative;
     margin: auto;
     height: 50vh;
     width: 90vw;
   }
+
   .bar,
   .mobile {
     border: none;
   }
+
   .bar-graph {
     height: 40vh;
     width: 45vw;
   }
+
   .v2 {
     border-right: 1px solid #a9a9a9;
     padding-left: 20px;
     height: 100%;
+    opacity: 0.5;
   }
+
   .doughnut {
     height: 40vh;
     width: 45vw;
   }
+
   .members-container {
     flex-direction: row;
     align-items: center;
     gap: 20px;
   }
+
   .members-text {
     display: flex;
     flex-direction: column;
     text-align: left;
   }
+
   .new-members p {
     font-weight: 600;
   }
+
   .date {
     margin-left: auto;
     margin-right: 10px;
     font-weight: 600;
   }
+
   .gth {
     display: inline;
     margin-left: auto;
   }
+
   .profile-image {
     margin-left: 0;
     margin-right: 0;
   }
+
   .recent-activity p {
     font-weight: 500;
   }
+
   .recent-activity {
-    border-top: none;
     border-bottom: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
   }
+
   .new-members {
     border-bottom: 1px solid #d3d3d3;
   }
+
   .message {
     border: none;
   }
+
   .settings {
     border-left: 1px solid #d3d3d3;
   }
+
   .toggle-1 {
     margin-right: 130px;
   }
+
   .timeZone {
     padding-top: 29px;
+  }
+
+  .alert-banner {
+    font-size: 1rem;
   }
 }

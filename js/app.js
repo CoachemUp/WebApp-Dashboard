@@ -4,7 +4,7 @@ const alertBanner = document.getElementById("alert");
 alertBanner.innerHTML = `<div class="alert-banner">
 <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
 to complete</p>
-<p class="alert-banner-close">x</p>
+<p class="alert-banner-close">X</p>
 </div>`;
 // create event to close the alert banner
 alertBanner.addEventListener("click", (e) => {
@@ -13,6 +13,59 @@ alertBanner.addEventListener("click", (e) => {
     alertBanner.style.display = "none";
   }
 });
+
+
+//Alert Modal
+const openModalButton = document.querySelectorAll('[data-modal-target]')
+const closeModalButton = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButton.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
+
+closeModalButton.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Messaging Section
 const user = document.getElementById("userField");
