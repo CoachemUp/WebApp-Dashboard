@@ -118,7 +118,7 @@ nav {
   width: 30px;
   height: auto;
 }
-.dot {
+#dot {
   display: flex;
   margin-left: auto;
   background-color: #88d688;
@@ -128,14 +128,19 @@ nav {
   opacity: 1;
 }
 /*----BELL ANIMATION----*/
+#notification {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
 #bell-icon {
   transform-origin: 50% 50%;
 }
 
-#bell:hover #bell-icon {
+#notification:hover #bell-icon {
   animation-name: ring;
   animation-duration: 3s;
-  animation-direction: alternate;
   animation-iteration-count: infinite;
 }
 
@@ -573,7 +578,78 @@ select {
 /*-------------------------------------
     POPUP WINDOW
 -------------------------------------*/
+.message-1 {
+  border-bottom: 2px dotted #88d688;
+  padding-bottom: 10px;
+}
+.message-2 {
+  border-bottom: 2px dotted #88d688;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 5px solid #88d688;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: #7175e1;
+  width: 500px;
+  max-width: 80%;
+  color: white;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #88d688;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 /*-------------------------------------
     MEDIA QUERIES
 -------------------------------------*/

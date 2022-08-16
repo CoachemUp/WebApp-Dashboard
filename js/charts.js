@@ -1,55 +1,120 @@
 //TRAFFIC CHART
-const trafficCanvas = document.getElementById("traffic-chart");
+const hour = [
+    { x: '2022-07-01T13:00:00', y: 22 },
+    { x: '2022-07-01T14:00:00', y: 52 },
+    { x: '2022-07-01T15:00:00', y: 60 },
+    { x: '2022-07-01T16:00:00', y: 5 },
+    { x: '2022-07-01T17:00:00', y: 18 },
+    { x: '2022-07-01T18:00:00', y: 72 },
+    { x: '2022-07-01T19:00:00', y: 3 },
+];
+const day = [
+    { x: ('2022-07-01'), y: 18 },
+    { x: ('2022-07-02'), y: 12 },
+    { x: ('2022-07-03'), y: 6 },
+    { x: ('2022-07-04'), y: 9 },
+    { x: ('2022-07-05'), y: 3 },
+    { x: ('2022-07-06'), y: 12 },
+    { x: ('2022-07-07'), y: 3 },
+];
+const week = [
+    { x: ('2022-07-01 '), y: 70 },
+    { x: ('2022-07-07 '), y: 100 },
+    { x: Date.parse('2022-07-14 00:00:00 GMT+000'), y: 60 },
+    { x: Date.parse('2022-07-21 00:00:00 GMT+000'), y: 230 },
+  
+];
+const month = [
+    { x: Date.parse('2022-01-01 '), y: 1822 },
+    { x: Date.parse('2022-02-01 '), y: 500 },
+    { x: Date.parse('2022-03-01 '), y: 2159 },
+    { x: Date.parse('2022-04-01 '), y: 1000 },
+    { x: Date.parse('2022-05-01 '), y: 600 },
+    { x: Date.parse('2022-06-01 '), y: 2300 },
+];
 
-let trafficData = {
-    labels: [
-        "16-22",
-        "23-29",
-        "30-5",
-        "6-12",
-        "13-19",
-        "20-26",
-        "27-3",
-        "4-10",
-        "11-17",
-        "18-24",
-        "25-31",
-    ],
-    datasets: [
-        {
-            lineTension: 0.5,
-            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-            backgroundColor: "rgba(116, 119, 191, .3)",
-            borderWidth: 1,
-
-        },
-    ],
+const data = {
+    datasets: [{
+        data: month,
+        lineTension: 0.5,
+        backgroundColor: "rgba(116, 119, 191, .3)",
+        borderWidth: 1,
+    }]
 };
 
-let trafficOptions = {
-    backgroundColor: "rgba(112, 104, 201, .5)",
-
-    fill: true,
-    maintainAspectRatio: false,
-    animation: {
-        duration: 0,
-    },
-    scales: {
-        y: {
-            beginAtZero: true,
+const config = {
+    type: 'line',
+    data,
+    options: {
+        plugins: {
+            legend: {
+                display: false,
+            }
         },
-    },
-    plugins: {
-        legend: {
-            display: false,
-        },
-    },
+        maintainAspectRatio: false,
+        fill: true,
+        scales: {
+            x: {
+                type: 'time',
+                time: {
+                    unit: 'month'
+                }
+            },
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
 };
-let trafficChart = new Chart(trafficCanvas, {
-    type: "line",
-    data: trafficData,
-    options: trafficOptions,
-});
+
+const trafficChart = new Chart(document.getElementById('traffic-chart'),
+    config
+);
+
+function timeFrame()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//old
+
 
 //Daily Traffic Chart
 const dailyCanvas = document.getElementById("daily-chart");

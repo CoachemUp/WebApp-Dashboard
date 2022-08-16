@@ -29,7 +29,7 @@ openModalButton.forEach(button => {
 
 closeModalButton.forEach(button => {
   button.addEventListener('click', () => {
-    const modal = button.closest('modal')
+    const modal = button.closest('.modal')
     closeModal(modal)
   })
 })
@@ -40,12 +40,17 @@ function openModal(modal) {
   overlay.classList.add('active')
 }
 
-function openModal(modal) {
+function closeModal(modal) {
   if (modal == null) return
   modal.classList.remove('active')
   overlay.classList.remove('active')
 };
 
+function removeNode() {
+  const removeDot = document.getElementById('dot')
+  const parent = removeDot.parentNode;
+  parent.removeChild(removeDot);
+}
 
 
 
