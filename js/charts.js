@@ -22,7 +22,7 @@ const week = [
     { x: ('2022-07-07 '), y: 100 },
     { x: Date.parse('2022-07-14 00:00:00 GMT+000'), y: 60 },
     { x: Date.parse('2022-07-21 00:00:00 GMT+000'), y: 230 },
-  
+
 ];
 const month = [
     { x: Date.parse('2022-01-01 '), y: 1822 },
@@ -71,11 +71,43 @@ const trafficChart = new Chart(document.getElementById('traffic-chart'),
     config
 );
 
+function timeFrame(period) {
+    console.log(period.value);
+    if (period.value == 'hour') {
+        trafficChart.config.options.scales.x.time.unit = period.value;
+        trafficChart.config.data.datasets[0].data = hour;
+    }
+    if (period.value == 'day') {
+        trafficChart.config.options.scales.x.time.unit = period.value;
+        trafficChart.config.data.datasets[0].data = day;
+    }
+    if (period.value == 'week') {
+        trafficChart.config.options.scales.x.time.unit = period.value;
+        trafficChart.config.data.datasets[0].data = week;
+    }
+    if (period.value == 'month') {
+        trafficChart.config.options.scales.x.time.unit = period.value;
+        trafficChart.config.data.datasets[0].data = month;
+    }
+    trafficChart.update();
+};
 
+//button change on active
+const button = document.querySelectorAll('.traffic-nav-link')
 
+button.forEach(el => {
+    el.addEventListener('click', () => {
+        button.forEach(el => el.classList.remove('active'))
+        el.classList.add('active')
+        if (document.querySelector('.traffic-nav-link').clicked == true) {
+            button.classlist.add('active');
 
+        } else if (document.querySelector('#btn-hour').clicked == true){
 
-
+            button.classList.remove('active');
+        }
+    })
+})
 
 
 

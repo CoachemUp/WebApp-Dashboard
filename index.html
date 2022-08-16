@@ -8,8 +8,7 @@
   <link href="css/styles.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
+
   <title>Web App Dashboard</title>
 </head>
 
@@ -74,12 +73,12 @@
     <section class="traffic" id="traffic">
       <div class="traffic-header">
         <h3>TRAFFIC</h3>
-        <ul class="traffic-nav">
-          <li onclick="timeFrame('')">Hourly</li>
-          <li class="traffic-nav-link">Daily</li>
-          <li class="traffic-nav-link active">Weekly</li>
-          <li class="traffic-nav-link">Monthly</li>
-        </ul>
+        <div class="traffic-nav">
+          <button class="traffic-nav-link active" id="btn-hour" onclick="timeFrame(this)" value="hour">Hourly</button>
+          <button class="traffic-nav-link" id="btn-day"  onclick="timeFrame(this)" value="day">Daily</button>
+          <button class="traffic-nav-link" id="btn-week"  onclick="timeFrame(this)" value="week">Weekly</button>
+          <button class="traffic-nav-link" id="btn-month"  onclick="timeFrame(this)" value="month">Monthly</button>
+        </div>
       </div>
       <!-- Web Traffic Line Chart -->
       <div class="daily-traffic">
