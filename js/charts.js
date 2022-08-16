@@ -71,7 +71,7 @@ const trafficChart = new Chart(document.getElementById('traffic-chart'),
     config
 );
 
-function timeFrame()
+
 
 
 
